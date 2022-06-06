@@ -107,24 +107,5 @@
 		display: block;
 		width: 100%;
 	}
-	.mins {
-		color: darkgoldenrod;
-	}
-	.secs {
-		color: darkgoldenrod;
-	}
-  footer {
-    margin-top: 3rem;
-  }
-  li {
-    margin-bottom: 1rem;
-  }
-  .flex {
-    display: flex;
-    align-items: center;
-  }
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
+  
 </style>
