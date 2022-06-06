@@ -23,22 +23,18 @@
 
 	const catUnsubscribe = cat.subscribe(value => {
 		catVotes = value;
-		console.log('cat: %d - dog: %d', catVotes, dogVotes)
 	});
 	const dogUnsubscribe = dog.subscribe(value => {
 		dogVotes = value;
-		console.log('cat: %d - dog: %d', catVotes, dogVotes)
 	});
 
 	const voteReceived = (vote)=>{
 		console.log("vote received for: ", vote.detail.animal )
 		if (vote.detail.animal == 'cat') {
-			console.log("adding to cat")
 			cat.update((currentCatVotes)=>{
 				return currentCatVotes + vote.detail.value
 			})
 		} else {
-			console.log("adding to dog")
 			dog.update((currentDogVotes)=>{
 				return currentDogVotes + vote.detail.value
 			})

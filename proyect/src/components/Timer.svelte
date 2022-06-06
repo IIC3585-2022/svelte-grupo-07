@@ -7,8 +7,7 @@
   
   const dispatch = createEventDispatcher()
 
-  const emitWinner = ()=>{
-    console.log("emiting winner")
+  const timeOver = ()=>{
     dispatch('winner', {
         });
   }
@@ -20,7 +19,7 @@
     }
     else if (stopped == false){
       console.log("less than")
-      emitWinner();
+      timeOver();
       stopped = true;
     }
     // if ($timer < 0) {
