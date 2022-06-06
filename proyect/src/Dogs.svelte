@@ -11,12 +11,17 @@
         console.log(data);
     }
     
-    onMount(getDog); //Aparece un gato inmediatamente al cargar la pagina
+
+
+    
+    onMount(getDog); //Aparece un perro inmediatamente al cargar la pagina
 
     async function voteUp(){
         dogVotes++;
         getDog();
+        console.log(src);
     }
+
 </script>
 
 <div class="dog">

@@ -1,50 +1,45 @@
 <script>
-	import Cats from "./Cats.svelte";
-	import Dogs from "./Dogs.svelte";
+	import Random from "./random.svelte";
+	import Breeds from "./breeds.svelte";
 
-	let catVotes = 0;
-	let dogVotes = 0;
+	export let menu = 1;
+
 </script>
 
 <main>
-	<h1>Cats v/s Dogs</h1>
 
-	<div class="votes">
-		<Cats bind:catVotes={catVotes}/>
-		<Dogs bind:dogVotes={dogVotes}/>
-	</div>
+	<ul id="menu">
+		<li><a href="/" on:click|preventDefault={() => (menu = 1)}>Random </a></li> |
+		<li><a href="/" on:click|preventDefault={() => (menu = 2)}> By Breeds</a></li>
+	</ul>
 
-	{#if catVotes > dogVotes}
-		<p> Cats are winning</p>
-	{:else if dogVotes > catVotes}
-		<p> Dogs are winning</p>
+	{#if menu === 1}
+		<Random />
+	{:else if menu === 2}
+		<Breeds />
 	{:else}
-		<p> It's a tie</p>
+		<h1>
+			Page Not Found
+		</h1>
 	{/if}
+
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+	ul#menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 50px;
+		background-color: #f5f5f5;
+		border-bottom: 1px solid #ccc;
+	}
+	ul#menu li{
+		list-style-type:none;
+		justify-content: center;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-
-	div.votes{
-		display: flexbox;
-	}
 </style>
