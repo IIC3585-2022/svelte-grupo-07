@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { dirty_components } from 'svelte/internal';
     export let catVotes;
     let src;
 
@@ -17,9 +18,30 @@
         catVotes++;
         getCat();
     }
+
+    async function holamundo(){
+        console.log('hola mundo');
+    }
+
+    async function getCatByBreed(breed_id){
+        //breed = "abys";
+        let breedsrc = "https://api.thecatapi.com/v1/images/search?breed_ids="+breed;
+        const response = await fetch(breedsrc);
+        const data = await response.json();
+        src = await data[0].url;
+        console.log(data);
+    }
+
+
 </script>
 
+<div class="cat-breed">
+
+</div>
+
 <div class="cat">
+
+
     {#if src}
         <img {src} alt='random cato'>
     {:else}
