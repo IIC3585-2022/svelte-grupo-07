@@ -14,3 +14,13 @@ const addVote = ()=>{
 <button on:click={addVote}>
     Votar
 </button>
+
+<style>
+    button {
+        color: white;
+        background: #ff3e00;
+        padding: 20px;
+        border: none;
+        border-radius: 4px;
+    }
+</style>
