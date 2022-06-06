@@ -22,5 +22,6 @@ const addVote = ()=>{
         padding: 20px;
         border: none;
         border-radius: 4px;
+        margin-top: 5px;
     }
 </style>
