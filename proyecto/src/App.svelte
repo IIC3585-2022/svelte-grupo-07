@@ -64,7 +64,6 @@
 		<Confetti durationInSeconds={4} />
 	</div>
 	{/if}
-
 	<h1>Cats v/s Dogs</h1>
 	{#if toggleTimer}
 	<Timer on:winner={announceWinner}></Timer>
@@ -92,6 +91,7 @@
 	{:else}
 		<p in:fly="{{ y: 200, duration: 2000 }}" out:fade> It's a tie</p>
 	{/if}
+
 </main>
 
 <style>
@@ -126,11 +126,17 @@
 	}
 
 	.container2{
+		position: sticky;
 		width: 00px;
-		margin: 50% 80%;
+		height: 0px;
+		left: 10%;
+		top: 100px;
 	}
 	.container3{
+		position: sticky;
 		width: 00px;
-		margin: 30% 20%;
+		height: 0px;
+		left: 90%;
+		top: 100px;
 	}
 </style>

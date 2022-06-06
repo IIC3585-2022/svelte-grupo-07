@@ -47,7 +47,7 @@
     {#if src}
         <img {src} alt='random animal'>
     {:else}
-        <p>Loading...</p>
+        <p id="loading">Loading...</p>
     {/if}
 
     <Counter on:vote={forward}></Counter>
@@ -69,4 +69,10 @@
 		font-size: 2em;
 		font-weight: 100;
 	}
+
+    p#loading{
+        font-size: 1em;
+        width: 300px;
+        height: 0px;
+    }
 </style>
